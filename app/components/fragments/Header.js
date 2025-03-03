@@ -1,15 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { useAuth } from '../../hooks';
-
-export default ({ onLogin = () => {} }) => {
-  const { login, connecting, connected } = useAuth();
-
-  const login_ = () => {
-    login();
-    onLogin();
-  };
+export default () => {
 
   return (
     <header className="mb-5">
@@ -23,24 +15,12 @@ export default ({ onLogin = () => {} }) => {
             <Link to="/premium" className="nav-item nav-link">
               Premium post
             </Link>
-            <Link to="/free" className="nav-item nav-link">
-              Free Post
-            </Link>
-            <Link to="/subscribe" className="nav-item nav-link">
-              Subscribe now!
+            <Link to="/premium2" className="nav-item nav-link">
+              Premium post 2
             </Link>
           </div>
         </div>
 
-        <span className="navbar-text">
-          { connecting ? (
-            <span>Connecting...</span>
-          ) : connected ? (
-            <span>Signed as: <strong>Rick Sanchez</strong></span>
-          ) : (
-            <a href="#" onClick={login_}>Sign in</a>
-          ) }
-        </span>
       </nav>
     </header>
   );

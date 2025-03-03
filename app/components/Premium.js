@@ -7,7 +7,6 @@ import {
   Pixel,
 } from '@poool/react-access';
 
-
 export default () => {
   const accessRef = useRef();
   const paywallRef = useRef();
